@@ -23,8 +23,6 @@ export default ts.config(
 			}
 		},
 		rules: {
-			// typescript-eslint strongly recommends disabling no-undef on TS projects;
-			// the compiler already catches undefined variables with full type information
 			'no-undef': 'off'
 		}
 	},
