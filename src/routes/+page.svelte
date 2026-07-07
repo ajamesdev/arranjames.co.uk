@@ -7,6 +7,9 @@
 	import QuickInfo from '$lib/components/QuickInfo.svelte';
 	import Skills from '$lib/components/Skills.svelte';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
+	import type { PageData } from './$types';
+
+	let { data }: { data: PageData } = $props();
 </script>
 
 <main class="main-container">
@@ -14,7 +17,7 @@
 
 	<div class="grid gap-5 lg:grid-cols-3">
 		<div class="space-y-5">
-			<ProfileCard />
+			<ProfileCard contributions={data.contributions} />
 			<div class="hidden lg:block">
 				<div class="space-y-5">
 					<QuickInfo />

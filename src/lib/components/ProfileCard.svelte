@@ -1,7 +1,12 @@
 <script lang="ts">
+	import GitHubActivity from '$lib/components/GitHubActivity.svelte';
 	import DownloadIcon from '$lib/components/icons/DownloadIcon.svelte';
+	import type { ContributionDay } from '$lib/github';
 
-	let { isSimpleView = false }: { isSimpleView?: boolean } = $props();
+	let {
+		contributions,
+		isSimpleView = false
+	}: { contributions: ContributionDay[]; isSimpleView?: boolean } = $props();
 
 	function handleCVDownloadClick() {
 		window.gtag('event', 'download_cv', {
@@ -19,7 +24,9 @@
 </script>
 
 <div class="overflow-hidden rounded-xl shadow">
-	<div class="bg-cover"></div>
+	<div class="bg-cover">
+		<GitHubActivity {contributions} />
+	</div>
 
 	<div class="block-section-profile relative p-7 pt-14">
 		<img src="/img/avatar.jpg" alt="Avatar" class="me-photo" />
