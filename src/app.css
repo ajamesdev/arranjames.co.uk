@@ -1,0 +1,139 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+	margin: 0;
+	font-family:
+		-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+	.main-container {
+		@apply container mx-auto max-w-6xl p-4 sm:p-5;
+	}
+
+	.block-section {
+		@apply rounded-xl bg-white shadow;
+	}
+
+	.block-section-profile {
+		@apply rounded-xl rounded-t-none bg-white shadow;
+	}
+
+	.block-title {
+		@apply mb-5 text-lg font-semibold;
+	}
+
+	.item-section {
+		@apply space-y-4 sm:flex sm:items-start sm:space-y-0 sm:space-x-4;
+	}
+
+	.block-header-info {
+		@apply flex items-center space-x-1.5 text-sm font-medium text-gray-400;
+	}
+
+	.block-header {
+		@apply space-y-4 sm:flex sm:justify-between sm:space-y-0;
+	}
+
+	.me-photo {
+		@apply absolute -top-10 h-20 w-20 rounded-xl border-2 border-white shadow;
+	}
+
+	.download-cv-btn {
+		@apply w-full rounded-l-lg bg-blue-500 py-2 text-base font-semibold text-white transition duration-200 group-hover:bg-blue-600;
+	}
+
+	.download-cv-btn-icon {
+		@apply rounded-r-lg bg-blue-600 px-5 py-2 text-white;
+	}
+
+	.skill-tag {
+		@apply m-1 rounded-lg bg-blue-100 px-4 py-1.5 text-sm font-medium text-blue-500;
+	}
+
+	.link-out {
+		@apply flex items-center space-x-1 font-medium text-blue-500;
+	}
+
+	.social-link-out-hover {
+		@apply transition duration-300 hover:text-blue-600;
+	}
+
+	.company-block-logo {
+		@apply flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-white;
+	}
+
+	.job-type-badge {
+		@apply inline-flex rounded-lg bg-blue-100 px-2 py-0.5 text-xs font-medium text-blue-500 capitalize;
+	}
+}
+
+/* Dark Mode Styles */
+
+.dark html,
+.dark body {
+	border-color: #736b5e;
+	color: #e8e6e3;
+}
+
+.dark .dark-background {
+	background-color: rgb(30, 32, 34);
+}
+
+.dark .block-section,
+.dark .block-section-profile {
+	background-color: rgb(24, 26, 27);
+}
+
+.dark .block-title {
+	color: #e8e6e3;
+}
+
+.dark .block-header-info {
+	color: rgb(175, 169, 158);
+}
+
+.dark .skill-tag {
+	background-color: rgb(34, 37, 39);
+	color: rgb(69, 159, 246);
+}
+
+.dark .job-type-badge {
+	background-color: rgb(34, 37, 39);
+	color: rgb(69, 159, 246);
+}
+
+.dark .download-cv-btn {
+	background-color: rgb(16, 67, 178);
+}
+
+.dark .download-cv-btn:hover {
+	background-color: rgb(16, 60, 155);
+}
+
+.dark .download-cv-btn-icon {
+	background-color: rgb(16, 60, 155);
+	color: rgb(232, 230, 227);
+}
+
+.dark .link-out {
+	color: rgb(69, 159, 246);
+}
+
+.dark .border-gray-200 {
+	border-color: rgb(54, 59, 61);
+}
+
+.dark .text-gray-600 {
+	color: rgb(177, 170, 160);
+}
+
+.dark .text-gray-400 {
+	color: rgb(175, 169, 158);
+}
