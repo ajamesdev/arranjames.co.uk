@@ -12,7 +12,16 @@ const levels: Record<string, number> = {
 	FOURTH_QUARTILE: 4
 };
 
-export async function getContributions(
+let cached: Promise<ContributionDay[]> | undefined;
+
+export function getContributions(
+	fetch: typeof globalThis.fetch
+): Promise<ContributionDay[]> {
+	cached ??= fetchContributions(fetch);
+	return cached;
+}
+
+async function fetchContributions(
 	fetch: typeof globalThis.fetch
 ): Promise<ContributionDay[]> {
 	try {
