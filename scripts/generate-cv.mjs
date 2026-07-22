@@ -44,6 +44,7 @@ const { port } = server.address();
 
 const browser = await puppeteer.launch({
 	args: [...chromium.args, '--no-sandbox'],
+	defaultViewport: { width: 1316, height: 1080 },
 	executablePath: await chromium.executablePath(),
 	headless: true
 });

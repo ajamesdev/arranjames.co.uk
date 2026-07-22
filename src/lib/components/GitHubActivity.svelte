@@ -21,6 +21,9 @@
 	const panelSize = $derived(
 		width > 0 ? (width - panelMargin * (columns - 1)) / columns : 11
 	);
+	const gridWidth = $derived(
+		columns * (panelSize + panelMargin) - panelMargin
+	);
 	const svgHeight = $derived(rows * (panelSize + panelMargin));
 
 	const dayMs = 86400000;
@@ -82,8 +85,8 @@
 {#if contributions.length}
 	<div class="h-full w-full" bind:clientWidth={width}>
 		<svg
-			style="width: 100%"
-			height={svgHeight}
+			style="width: 100%; height: auto"
+			viewBox="0 0 {gridWidth} {svgHeight}"
 			role="img"
 			aria-label="GitHub contribution activity"
 			onmouseleave={() => (tooltip = null)}
