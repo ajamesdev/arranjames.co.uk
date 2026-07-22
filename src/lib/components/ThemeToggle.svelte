@@ -3,16 +3,13 @@
 </script>
 
 <button
-	class="fixed top-4 right-4 z-50 flex h-10 w-10 items-center justify-center rounded-full p-2 transition focus:outline-none {theme.current ===
-	'dark'
-		? 'bg-white text-black'
-		: 'bg-black text-white'}"
+	class="fixed top-4 right-4 z-50 grid h-10 w-10 cursor-pointer place-items-center rounded-full bg-white/80 text-zinc-600 shadow-xs ring-1 ring-zinc-900/10 backdrop-blur transition hover:text-blue-600 dark:bg-zinc-800/80 dark:text-zinc-300 dark:ring-white/10 dark:hover:text-blue-400"
 	aria-label="Toggle dark mode"
 	onclick={() => theme.toggle()}
 >
 	{#if theme.current === 'light'}
 		<svg
-			class="h-8 w-8 fill-current"
+			class="h-5 w-5 fill-current"
 			viewBox="0 0 24 24"
 			aria-hidden="true"
 		>
@@ -22,7 +19,7 @@
 		</svg>
 	{:else}
 		<svg
-			class="h-8 w-8 fill-current"
+			class="h-5 w-5 fill-current"
 			viewBox="0 0 24 24"
 			aria-hidden="true"
 		>

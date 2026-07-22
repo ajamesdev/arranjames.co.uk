@@ -13,23 +13,23 @@
 	}: { contributions: ContributionDay[]; isSimpleView?: boolean } = $props();
 </script>
 
-<div class="grid gap-5 lg:grid-cols-3">
-	<div class="space-y-5">
+<div class="grid gap-5 lg:grid-cols-3 print:gap-3">
+	<div class="space-y-5 print:space-y-3">
 		<ProfileCard {contributions} {isSimpleView} />
 		<div class="hidden lg:block">
-			<div class="space-y-5">
+			<div class="space-y-5 print:space-y-3">
 				<QuickInfo />
 				<Skills />
 			</div>
 		</div>
 	</div>
 
-	<div class="space-y-5 lg:col-span-2">
+	<div class="space-y-5 lg:col-span-2 print:space-y-3">
 		<AboutMe {isSimpleView} />
 		<Education />
 		<Experience />
 		<div class="lg:hidden">
-			<div class="space-y-5">
+			<div class="space-y-5 print:space-y-3">
 				<Skills />
 			</div>
 		</div>

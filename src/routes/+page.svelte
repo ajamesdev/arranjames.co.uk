@@ -7,7 +7,7 @@
 	let { data }: { data: PageData } = $props();
 </script>
 
-<main class="main-container">
+<main class="container mx-auto max-w-6xl p-4 sm:p-5 print:p-0">
 	<ThemeToggle />
 
 	<CvContainer contributions={data.contributions} />

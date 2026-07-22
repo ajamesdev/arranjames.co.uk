@@ -6,7 +6,7 @@
 	let { data }: { data: PageData } = $props();
 </script>
 
-<main class="mx-auto max-w-screen-2xl p-4">
+<main class="mx-auto max-w-screen-2xl p-4 print:p-0">
 	<CvContainer contributions={data.contributions} isSimpleView />
 
 	<Footer />

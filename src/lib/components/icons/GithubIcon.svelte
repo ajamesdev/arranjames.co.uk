@@ -1,4 +1,4 @@
-<svg class="h-6 w-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+<svg class="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
 	<path
 		fill-rule="evenodd"
 		clip-rule="evenodd"

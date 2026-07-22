@@ -23,29 +23,48 @@
 	}
 </script>
 
-<div class="overflow-hidden rounded-xl shadow">
-	<div class="bg-cover">
-		<GitHubActivity {contributions} />
-	</div>
+<div
+	class="overflow-hidden rounded-2xl shadow-xs ring-1 ring-zinc-900/5 dark:shadow-none dark:ring-white/10"
+>
+	<GitHubActivity {contributions} />
 
-	<div class="block-section-profile relative p-7 pt-14">
-		<img src="/img/avatar.jpg" alt="Avatar" class="me-photo" />
+	<div
+		class="relative bg-white p-7 pt-14 print:p-4 print:pt-10 dark:bg-zinc-900"
+	>
+		<img
+			src="/img/avatar.jpg"
+			alt="Avatar"
+			class="absolute -top-10 h-20 w-20 rounded-2xl shadow-md ring-4 ring-white"
+		/>
 
-		<div class="mb-1.2 text-lg font-semibold">Arran James</div>
-		<div class="text-md mb-1.5 font-semibold">B.Sc. (Hons)</div>
-		<div class="text-sm text-gray-400">Full Stack Web Developer</div>
+		<h1
+			class="text-xl font-bold tracking-tight text-zinc-900 dark:text-white"
+		>
+			Arran James
+		</h1>
+		<div class="mt-1 text-sm font-medium text-zinc-500 dark:text-zinc-400">
+			B.Sc. (Hons)
+		</div>
+		<div
+			class="mt-1.5 text-sm font-semibold text-blue-600 dark:text-blue-400"
+		>
+			Full Stack Web Developer
+		</div>
+
 		{#if !isSimpleView}
-			<div class="group mt-7 flex">
-				<button class="download-cv-btn" onclick={handleCVDownloadClick}
-					>Download CV</button
+			<button
+				class="group mt-7 flex w-full cursor-pointer items-stretch overflow-hidden rounded-xl text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition duration-200 hover:shadow-blue-600/35 hover:brightness-110 active:scale-[0.98]"
+				onclick={handleCVDownloadClick}
+			>
+				<span
+					class="flex-1 bg-linear-to-r from-blue-600 to-indigo-600 py-2.5"
 				>
-				<button
-					class="download-cv-btn-icon"
-					onclick={handleCVDownloadClick}
-				>
+					Download CV
+				</span>
+				<span class="grid place-items-center bg-indigo-700 px-4">
 					<DownloadIcon />
-				</button>
-			</div>
+				</span>
+			</button>
 		{/if}
 	</div>
 </div>

@@ -34,6 +34,14 @@
 	<link rel="canonical" href="https://www.arranjames.co.uk" />
 </svelte:head>
 
-<div class="dark-background bg-gray-100 antialiased">
-	{@render children()}
+<div
+	class="min-h-dvh bg-zinc-50 text-zinc-900 print:bg-white dark:bg-zinc-950 dark:text-zinc-100"
+>
+	<div
+		class="backdrop-glow pointer-events-none fixed inset-0 print:hidden"
+		aria-hidden="true"
+	></div>
+	<div class="relative">
+		{@render children()}
+	</div>
 </div>

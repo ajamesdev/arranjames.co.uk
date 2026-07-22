@@ -5,7 +5,6 @@
 
 	const rows = 7;
 	const panelMargin = 2;
-	const colors = ['#ebedf0', '#9acdf7', '#4083c4', '#3062a3', '#21467b'];
 
 	let width = $state(0);
 	let tooltip = $state<{ text: string; x: number; y: number } | null>(null);
@@ -97,7 +96,7 @@
 					y={cell.y}
 					width={panelSize}
 					height={panelSize}
-					fill={colors[cell.level]}
+					fill="var(--contribution-{cell.level})"
 					role="presentation"
 					onmouseenter={(event) =>
 						showTooltip(event, cell.count, cell.date)}
@@ -110,7 +109,7 @@
 	</div>
 	{#if tooltip}
 		<div
-			class="pointer-events-none fixed z-50 -translate-x-1/2 rounded-md bg-gray-800 px-2 py-1 text-xs font-medium whitespace-nowrap text-white shadow"
+			class="pointer-events-none fixed z-50 -translate-x-1/2 rounded-lg bg-zinc-900 px-2.5 py-1 text-xs font-medium whitespace-nowrap text-white shadow-lg ring-1 ring-white/10 dark:bg-zinc-700"
 			style="left: {tooltip.x}px; top: {tooltip.y - 34}px"
 		>
 			{tooltip.text}
@@ -118,7 +117,7 @@
 	{/if}
 {:else}
 	<div
-		class="block-section h-16 bg-cover"
+		class="h-16 bg-cover"
 		style="background-image: url(/img/cover.jpg)"
 	></div>
 {/if}
