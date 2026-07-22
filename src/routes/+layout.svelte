@@ -19,7 +19,7 @@
 		property="og:description"
 		content="Virtual CV for Arran James, Full Stack Web Developer."
 	/>
-	<meta property="og:url" content="https://www.arranjames.io" />
+	<meta property="og:url" content="https://www.arranjames.co.uk" />
 	<meta property="og:type" content="website" />
 
 	<meta
@@ -31,7 +31,7 @@
 		content="Virtual CV for Arran James, Full Stack Web Developer."
 	/>
 
-	<link rel="canonical" href="https://www.arranjames.io" />
+	<link rel="canonical" href="https://www.arranjames.co.uk" />
 </svelte:head>
 
 <div class="dark-background bg-gray-100 antialiased">

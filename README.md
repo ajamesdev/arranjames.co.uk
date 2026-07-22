@@ -1,3 +1,3 @@
-# arranjames.io
+# arranjames.co.uk
 
-Personal site and CV, live at [arranjames.io](https://www.arranjames.io).
+Personal site and CV, live at [arranjames.co.uk](https://www.arranjames.co.uk).

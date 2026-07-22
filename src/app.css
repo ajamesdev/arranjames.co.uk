@@ -12,6 +12,37 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+@media print {
+	.bg-gray-100 {
+		background-color: white;
+	}
+
+	main {
+		padding: 0;
+	}
+
+	.grid {
+		gap: 0.75rem;
+	}
+
+	.space-y-5 > :not(:last-child) {
+		margin-block-end: 0.75rem;
+	}
+
+	.block-section {
+		padding: 1rem;
+	}
+
+	.block-section-profile {
+		padding: 1rem;
+		padding-top: 2.5rem;
+	}
+
+	.item-section {
+		break-inside: avoid;
+	}
+}
+
 @layer components {
 	.main-container {
 		@apply container mx-auto max-w-6xl p-4 sm:p-5;

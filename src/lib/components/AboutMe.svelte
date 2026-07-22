@@ -23,19 +23,19 @@
 
 	<div class="flex flex-col space-y-1">
 		<a
-			href="mailto:hello@arranjames.io"
+			href="mailto:hello@arranjames.co.uk"
 			class="link-out social-link-out-hover"
 		>
 			<AtIcon />
-			<span>hello@arranjames.io</span>
+			<span>hello@arranjames.co.uk</span>
 		</a>
 		<a
-			href="https://www.arranjames.io"
+			href="https://www.arranjames.co.uk"
 			target="_blank"
 			class="link-out social-link-out-hover mt-0"
 		>
 			<PlanetIcon />
-			<span>arranjames.io</span>
+			<span>arranjames.co.uk</span>
 		</a>
 	</div>
 	{#if !isSimpleView}
