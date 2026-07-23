@@ -5,8 +5,13 @@
 
 	let {
 		contributions,
-		isSimpleView = false
-	}: { contributions: ContributionDay[]; isSimpleView?: boolean } = $props();
+		isSimpleView = false,
+		name = 'Arran James'
+	}: {
+		contributions: ContributionDay[];
+		isSimpleView?: boolean;
+		name?: string;
+	} = $props();
 
 	function handleCVDownloadClick() {
 		window.gtag('event', 'download_cv', {
@@ -40,7 +45,7 @@
 		<h1
 			class="text-xl font-bold tracking-tight text-zinc-900 dark:text-white"
 		>
-			Arran James
+			{name}
 		</h1>
 		<div class="mt-1 text-sm font-medium text-zinc-500 dark:text-zinc-400">
 			B.Sc. (Hons)

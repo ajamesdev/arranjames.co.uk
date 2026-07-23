@@ -7,6 +7,7 @@
 # build output
 /.svelte-kit
 /build
+/*_CV.pdf
 
 # misc
 .DS_Store

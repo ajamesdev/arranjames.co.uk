@@ -9,13 +9,22 @@
 
 	let {
 		contributions,
-		isSimpleView = false
-	}: { contributions: ContributionDay[]; isSimpleView?: boolean } = $props();
+		isSimpleView = false,
+		name,
+		phone,
+		email
+	}: {
+		contributions: ContributionDay[];
+		isSimpleView?: boolean;
+		name?: string;
+		phone?: string;
+		email?: string;
+	} = $props();
 </script>
 
 <div class="grid gap-5 lg:grid-cols-3 print:gap-3">
 	<div class="space-y-5 print:space-y-3">
-		<ProfileCard {contributions} {isSimpleView} />
+		<ProfileCard {contributions} {isSimpleView} {name} />
 		<div class="hidden lg:block">
 			<div class="space-y-5 print:space-y-3">
 				<QuickInfo />
@@ -25,7 +34,7 @@
 	</div>
 
 	<div class="space-y-5 lg:col-span-2 print:space-y-3">
-		<AboutMe {isSimpleView} />
+		<AboutMe {isSimpleView} {phone} {email} />
 		<Education />
 		<Experience />
 		<div class="lg:hidden">

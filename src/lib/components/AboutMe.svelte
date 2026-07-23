@@ -3,9 +3,14 @@
 	import AtIcon from '$lib/components/icons/AtIcon.svelte';
 	import GithubIcon from '$lib/components/icons/GithubIcon.svelte';
 	import LinkedinIcon from '$lib/components/icons/LinkedinIcon.svelte';
+	import PhoneIcon from '$lib/components/icons/PhoneIcon.svelte';
 	import PlanetIcon from '$lib/components/icons/PlanetIcon.svelte';
 
-	let { isSimpleView = false }: { isSimpleView?: boolean } = $props();
+	let {
+		isSimpleView = false,
+		phone,
+		email
+	}: { isSimpleView?: boolean; phone?: string; email?: string } = $props();
 </script>
 
 <Section title="About me">
@@ -21,7 +26,33 @@
 		a fine balance of technical expertise.
 	</p>
 
-	<div class="mt-5 flex flex-col gap-2">
+	<div class="mt-5 flex flex-wrap gap-x-6 gap-y-2">
+		{#if phone}
+			<a
+				href="tel:{phone.replaceAll(' ', '')}"
+				class="group flex items-center gap-2.5 text-sm font-medium text-blue-600 transition hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+			>
+				<span
+					class="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-blue-50 text-blue-600 ring-1 ring-blue-600/10 transition group-hover:bg-blue-100 dark:bg-blue-400/10 dark:text-blue-300 dark:ring-blue-400/20 dark:group-hover:bg-blue-400/20"
+				>
+					<PhoneIcon />
+				</span>
+				<span>{phone}</span>
+			</a>
+		{/if}
+		{#if email}
+			<a
+				href="mailto:{email}"
+				class="group flex items-center gap-2.5 text-sm font-medium text-blue-600 transition hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+			>
+				<span
+					class="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-blue-50 text-blue-600 ring-1 ring-blue-600/10 transition group-hover:bg-blue-100 dark:bg-blue-400/10 dark:text-blue-300 dark:ring-blue-400/20 dark:group-hover:bg-blue-400/20"
+				>
+					<AtIcon />
+				</span>
+				<span>{email}</span>
+			</a>
+		{/if}
 		<a
 			href="mailto:hello@arranjames.co.uk"
 			class="group flex items-center gap-2.5 text-sm font-medium text-blue-600 transition hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"

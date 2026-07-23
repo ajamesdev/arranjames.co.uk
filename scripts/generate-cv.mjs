@@ -1,11 +1,33 @@
 import { readFile } from 'node:fs/promises';
 import { createServer } from 'node:http';
-import { extname, join } from 'node:path';
+import { basename, extname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { parseArgs } from 'node:util';
 import chromium from '@sparticuz/chromium';
 import puppeteer from 'puppeteer-core';
 
 const root = fileURLToPath(new URL('../build', import.meta.url));
+
+const { values } = parseArgs({
+	options: {
+		name: { type: 'string' },
+		phone: { type: 'string' },
+		email: { type: 'string' },
+		out: { type: 'string' }
+	}
+});
+
+const query = new URLSearchParams();
+if (values.name) query.set('name', values.name);
+if (values.phone) query.set('phone', values.phone);
+if (values.email) query.set('email', values.email);
+
+const filename = `${(values.name ?? 'Arran James').replaceAll(' ', '_')}_FullStackWebDeveloper_CV.pdf`;
+const output =
+	values.out ??
+	(query.size
+		? fileURLToPath(new URL(`../${filename}`, import.meta.url))
+		: join(root, filename));
 
 const types = {
 	'.html': 'text/html',
@@ -49,11 +71,14 @@ const browser = await puppeteer.launch({
 	headless: true
 });
 const page = await browser.newPage();
-await page.goto(`http://localhost:${port}/simple`, {
-	waitUntil: 'networkidle0'
-});
+await page.goto(
+	`http://localhost:${port}/simple${query.size ? `?${query}` : ''}`,
+	{
+		waitUntil: 'networkidle0'
+	}
+);
 await page.pdf({
-	path: join(root, 'Arran_James_FullStackWebDeveloper_CV.pdf'),
+	path: output,
 	format: 'A4',
 	scale: 0.58,
 	printBackground: true,
@@ -62,4 +87,4 @@ await page.pdf({
 
 await browser.close();
 server.close();
-console.log('Generated Arran_James_FullStackWebDeveloper_CV.pdf from /simple');
+console.log(`Generated ${basename(output)} from /simple`);
